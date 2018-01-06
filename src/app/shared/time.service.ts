@@ -18,6 +18,6 @@ export class TimeService {
   }
 
   getDayAndDateForDisplay(time: Date): string {
-    return moment(time).format("dddd DD MMMM YYYY");
+    return moment(time).format("dddd DD MMM YYYY");
   }
 }
