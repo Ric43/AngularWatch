@@ -21,10 +21,11 @@ export class SecondsComponent implements OnInit, OnDestroy, ITimerElapsedHandler
   onElapsed(source: Timer, e: TimerElapsedEventArguments): void {
     this.displayTime = this._timeService.getSecondsForDisplay(e.signalTime);
   }
-  
+
   ngOnInit(): void {
     this._timer = this._timeService.createTimer(this._interval);
     this._timer.elapsed(this);
+    this.onElapsed(this._timer, new TimerElapsedEventArguments(new Date()));
     this._timer.start();
   }
 

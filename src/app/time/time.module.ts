@@ -10,7 +10,7 @@ import { DayAndDateComponent } from './day-and-date.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'time1', component: TimeComponent },
+      { path: 'time1', component: TimeComponent  },
       { path: '', redirectTo: 'time1', pathMatch: 'full' },
       { path: '**', redirectTo: 'time1', pathMatch: 'full' }
     ]),
@@ -19,4 +19,5 @@ import { DayAndDateComponent } from './day-and-date.component';
   declarations: [TimeComponent, HoursAndMinutesComponent, SecondsComponent, DayAndDateComponent],
   exports: [TimeComponent]
 })
-export class TimeModule { }
+export class TimeModule { 
+}

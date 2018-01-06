@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TimeModule } from './time/time.module';
 import { TimeService } from './shared/time.service';
+import { StopwatchModule } from './stopwatch/stopwatch.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { TimeService } from './shared/time.service';
   ],
   imports: [
     BrowserModule,
+    StopwatchModule,
     TimeModule,
     RouterModule.forRoot([])
   ],

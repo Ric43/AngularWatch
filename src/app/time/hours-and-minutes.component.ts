@@ -25,6 +25,7 @@ export class HoursAndMinutesComponent implements OnInit, OnDestroy, ITimerElapse
   ngOnInit() {
     this._timer = this._timeService.createTimer(this._interval);
     this._timer.elapsed(this);
+    this.onElapsed(this._timer, new TimerElapsedEventArguments(new Date()));
     this._timer.start();
   }
 

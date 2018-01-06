@@ -26,6 +26,7 @@ export class DayAndDateComponent implements OnInit, OnDestroy, ITimerElapsedHand
   ngOnInit() {
     this._timer = this._timeService.createTimer(this._interval);
     this._timer.elapsed(this);
+    this.onElapsed(this._timer, new TimerElapsedEventArguments(new Date()));
     this._timer.start();
   }
 

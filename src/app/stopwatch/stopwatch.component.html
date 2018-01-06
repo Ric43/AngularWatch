@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <td><aw-minutes [value]="minutes"></aw-minutes><span>:</span><aw-seconds [value]="seconds"></aw-seconds></td>
+    <td><aw-milliseconds [value]="milliseconds"></aw-milliseconds></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+        <a class='btn btn-default' (click)='onStartStop()'>
+            <i class='glyphicon glyphicon-time'></i> {{ startStopLabel }}
+        </a>
+        <a class='btn btn-default' (click)='onReset()'>
+            <i class='glyphicon glyphicon-refresh'></i> {{ resetLabel }}
+        </a>
+    </td>
+  </tr>
+</table>

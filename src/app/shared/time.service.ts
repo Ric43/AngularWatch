@@ -20,4 +20,8 @@ export class TimeService {
   getDayAndDateForDisplay(time: Date): string {
     return moment(time).format("dddd DD MMM YYYY");
   }
+
+  getTimeDifferenceInMilliseconds(time1: Date, time2: Date): number {
+    return moment(time1).diff(time2);
+  }
 }
