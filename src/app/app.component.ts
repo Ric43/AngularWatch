@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = "Angular Watch";
+  title = 'Angular Watch';
 
   constructor(private _router: Router) {}
 }

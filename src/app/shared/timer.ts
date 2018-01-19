@@ -9,7 +9,7 @@ export class Timer {
     constructor(private _interval: number) {
     }
 
-    elapsed(handler: ITimerElapsedHandler):void {
+    elapsed(handler: ITimerElapsedHandler): void {
         this._handler = handler;
     }
 
@@ -24,7 +24,7 @@ export class Timer {
     }
 
     private tick(): void {
-        this._handler.onElapsed(this, new TimerElapsedEventArguments(new Date()))
+        this._handler.onElapsed(this, new TimerElapsedEventArguments(new Date()));
         if (this._isTicking) {
             this._timeout = setTimeout(() => this.tick(), this._interval);
         }
