@@ -1,5 +1,6 @@
 import { ITimerElapsedHandler } from "./itimerelapsedhandler";
 import { TimerElapsedEventArguments } from "./timerElapsedEventArguments";
+import * as moment from 'moment-timezone';
 
 export class Timer {
     private _handler: ITimerElapsedHandler;

@@ -16,8 +16,9 @@ $slideout-width: calc(25% - 100px);
 // ============================= /
 
 #drawer {
-  background: snow;
+  background: dimgray;
   font-size: 1.5em;
+  color: black;
   position: absolute;
   top: 50px;
   bottom: 50px;
@@ -25,7 +26,14 @@ $slideout-width: calc(25% - 100px);
   width: $slideout-width;
 //   @extend .box-shadow;
   
-  .drawer__header, .drawer__content { padding: 25px 50px; }
+  .drawer__header, .drawer__content {
+    color:white; padding: 25px 50px;
+
+    select {
+      color: black;
+      background-color: lightgrey;
+    }
+  }
   
   .drawer__header {
     display: flex;
@@ -36,8 +44,10 @@ $slideout-width: calc(25% - 100px);
     
     .close {
     //   @extend .btn;
+      color: black;
       display: inline;
       line-height: 1em;
+      opacity: 0.4;
     }
   }
   
