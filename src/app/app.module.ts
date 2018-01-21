@@ -7,6 +7,7 @@ import { TimeModule } from './time/time.module';
 import { TimeService } from './shared/time.service';
 import { StopwatchModule } from './stopwatch/stopwatch.module';
 import { StorageServiceService } from './shared/storage-service.service';
+import { TimerModule } from './timer/timer.module';
 
 
 @NgModule({
@@ -15,9 +16,10 @@ import { StorageServiceService } from './shared/storage-service.service';
   ],
   imports: [
     BrowserModule,
+    TimerModule,
     StopwatchModule,
     TimeModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
   ],
   providers: [TimeService, StorageServiceService],
   bootstrap: [AppComponent]

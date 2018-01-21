@@ -1,0 +1,6 @@
+<p>
+  <span (click)="onHoursClick()" [hidden]="isEditMode">
+  {{ hours }}
+</span>
+<span><input type="text" [hidden]="!isEditMode" [value]="hours" /></span>
+</p>
