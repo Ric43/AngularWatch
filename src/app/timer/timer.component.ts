@@ -14,4 +14,18 @@ export class TimerComponent implements OnInit {
   ngOnInit() {
   }
 
+  onHoursNotify(hours : number): void {
+    this.hours = this._pad(hours, 2);
+  }
+
+  onMinutesNotify(minutes : number): void {
+    this.minutes = this._pad(minutes, 2);
+  }
+
+  private _pad(num:number, size:number): string {
+    let s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
 }

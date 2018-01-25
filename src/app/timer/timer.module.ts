@@ -7,6 +7,7 @@ import { TimerComponent } from './timer.component';
 import { HoursComponent } from './hours.component';
 import { MinutesComponent } from './minutes.component';
 import { SecondsComponent } from './seconds.component';
+import { TimerComponentDirective } from './timercomponent.directive';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { SecondsComponent } from './seconds.component';
     CommonModule,
     FormsModule
   ],
-  declarations: [TimerComponent, HoursComponent, MinutesComponent, SecondsComponent]
+  declarations: [TimerComponent, HoursComponent, MinutesComponent, SecondsComponent, TimerComponentDirective]
 })
 export class TimerModule { }

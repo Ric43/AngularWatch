@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'aw-tmr-hours',
@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./hours.component.scss']
 })
 export class HoursComponent implements OnInit {
-  @Input() hours : string;
+  @Input() hours : number;
+  @Output() notify: EventEmitter<number> = new EventEmitter<number>();
 
   isEditMode : boolean = false;
 
@@ -17,5 +18,11 @@ export class HoursComponent implements OnInit {
 
   onHoursClick() : void {
     this.isEditMode = true;
+  }
+
+  onFocusOut() : void {
+    this.isEditMode = false;
+    if (this.hours < 0) this.hours = 0;
+    this.notify.emit(this.hours);
   }
 }

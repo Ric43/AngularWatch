@@ -2,11 +2,11 @@
   <tbody>
     <tr>
       <td>
-        <aw-tmr-hours [hours]="hours"></aw-tmr-hours>
+        <aw-tmr-hours [hours]="hours" (notify)="onHoursNotify($event)"></aw-tmr-hours>
       </td>
       <td>:</td>
       <td>
-        <aw-tmr-minutes [minutes]="minutes"></aw-tmr-minutes>
+        <aw-tmr-minutes [minutes]="minutes" (notify)="onMinutesNotify($event)"></aw-tmr-minutes>
       </td>
       <td>
         <aw-tmr-seconds [seconds]="seconds"></aw-tmr-seconds>
