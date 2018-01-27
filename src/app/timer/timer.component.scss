@@ -2,3 +2,18 @@ td {
     font-size: 100px;
     font-weight: bold;
 }
+
+button {
+    font-size: 24px;
+    font-weight: normal;
+    border: solid 1px silver;
+    background-color: #202020;
+    width: 80%;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

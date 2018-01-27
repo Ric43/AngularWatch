@@ -2,16 +2,24 @@
   <tbody>
     <tr>
       <td>
-        <aw-tmr-hours [hours]="hours" (notify)="onHoursNotify($event)"></aw-tmr-hours>
+        <aw-tmr-hours [hours]="hours" [isRunning]="isRunning" (notify)="onHoursNotify($event)"></aw-tmr-hours>
       </td>
       <td>:</td>
       <td>
-        <aw-tmr-minutes [minutes]="minutes" (notify)="onMinutesNotify($event)"></aw-tmr-minutes>
+        <aw-tmr-minutes [minutes]="minutes" [isRunning]="isRunning" (notify)="onMinutesNotify($event)"></aw-tmr-minutes>
       </td>
       <td>
-        <aw-tmr-seconds [seconds]="seconds"></aw-tmr-seconds>
+        <aw-tmr-seconds [seconds]="seconds" [isRunning]="isRunning" (notify)="onSecondsNotify($event)"></aw-tmr-seconds>
       </td>
       <td width="100%"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button [disabled]="!isStartStopEnabled()" (click)="onStartStop()">{{startStopButtonText}}</button>
+      </td>
+      <td colspan="2" align="right">
+        <button [disabled]="isRunning" (click)="onReset()">{{ resetButtonText }}</button>
+      </td>
     </tr>
   </tbody>
 </table>

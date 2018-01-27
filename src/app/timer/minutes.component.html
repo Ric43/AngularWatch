@@ -1,6 +1,6 @@
 <p>
-  <span (click)="onMinutesClick()" [hidden]="isEditMode">
+  <span [hidden]="isEditMode && !isRunning">
     {{ minutes }}
   </span>
-  <span><input TimerComponent="59" type="text" [hidden]="!isEditMode" [(ngModel)]="minutes" (focusout)="onFocusOut()" /></span>
+  <span><input TimerComponent="59" type="text" [hidden]="!isEditMode || isRunning" [(ngModel)]="minutes" (focusout)="onFocusOut()" [focus]="focusTriggeringEventEmitter" /></span>
 </p>

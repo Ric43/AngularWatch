@@ -16,6 +16,10 @@ export class TimeService {
     return new Timer(interval);
   }
 
+  getTimePartFromDate(date: Date, part: string) : string {
+    return moment(date).format(part);
+  }
+
   getTimePart(part: string, timezoneName: string): string{
     return moment.tz(timezoneName).format(part);
   }
@@ -45,5 +49,12 @@ export class TimeService {
     tz.offsets = mtz.offsets;
     tz.timestamps = mtz.untils;
     return tz;
+  }
+
+  addTime(time: string, interval: any, increment: number): Date {
+    let units:moment.unitOfTime.DurationConstructor = interval;
+    let theTime = moment("2000-01-01 " + time, "yyyy-MM-dd HH:mm:ss");
+    theTime.add(increment, units);
+    return theTime.toDate();
   }
 }

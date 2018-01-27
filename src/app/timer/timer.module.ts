@@ -8,6 +8,8 @@ import { HoursComponent } from './hours.component';
 import { MinutesComponent } from './minutes.component';
 import { SecondsComponent } from './seconds.component';
 import { TimerComponentDirective } from './timercomponent.directive';
+import { SharedModule } from '../shared/shared.module';
+import { TimerAlarmService } from './timer-alarm.service';
 
 @NgModule({
   imports: [
@@ -15,8 +17,10 @@ import { TimerComponentDirective } from './timercomponent.directive';
       { path: 'timer', component: TimerComponent  },
     ]),
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
-  declarations: [TimerComponent, HoursComponent, MinutesComponent, SecondsComponent, TimerComponentDirective]
+  declarations: [TimerComponent, HoursComponent, MinutesComponent, SecondsComponent, TimerComponentDirective],
+  providers: [TimerAlarmService]
 })
 export class TimerModule { }

@@ -1,23 +1,45 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+
+import { FocusTriggeringEventEmitterDirective } from '../shared/directives/focus-triggering-event-emitter.directive';
 
 @Component({
   selector: 'aw-tmr-minutes',
   templateUrl: './minutes.component.html',
-  styleUrls: ['./minutes.component.scss']
+  styleUrls: ['./minutes.component.scss'],
+  host: {"(document:click)": "onClick($event)"}
 })
 export class MinutesComponent implements OnInit {
+  public elementRef: ElementRef;
+
   @Input() minutes : number;
   @Output() notify: EventEmitter<number> = new EventEmitter<number>();
 
-  isEditMode : boolean = false;
+  @Input() isEditMode : boolean = false;
+  @Input() isRunning : boolean = false;
 
-  constructor() { }
+  public focusTriggeringEventEmitter = new EventEmitter<boolean>();
 
-  ngOnInit() {
+  constructor(elementRef: ElementRef) {
+    this.elementRef = elementRef;
   }
 
-  onMinutesClick() : void {
-    this.isEditMode = true;
+  onClick(event): void {
+    var clickedComponent = event.target;
+    var inside = false;
+    do {
+        if (clickedComponent === this.elementRef.nativeElement) {
+            inside = true;
+        }
+        clickedComponent = clickedComponent.parentNode;
+    } while (clickedComponent);
+    if (inside) {
+      this.isEditMode = true;
+      this.focusTriggeringEventEmitter.emit(true);
+      } else {
+        this.isEditMode = false;
+      }  
+  }
+  ngOnInit() {
   }
 
   onFocusOut() : void {

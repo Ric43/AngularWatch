@@ -21,7 +21,7 @@ import { TimerModule } from './timer/timer.module';
     TimeModule,
     RouterModule.forRoot([]),
   ],
-  providers: [TimeService, StorageServiceService],
+  providers: [TimeService, StorageServiceService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
